@@ -30,19 +30,20 @@
         {
             this.btn_Ajouter = new System.Windows.Forms.Button();
             this.chp_NomV = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_Voilier = new System.Windows.Forms.DataGridView();
             this.chp_ImmatV = new System.Windows.Forms.TextBox();
             this.chp_MarqueV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.chp_Rechercher = new System.Windows.Forms.TextBox();
+            this.btn_Rechercher = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Voilier)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Ajouter
             // 
-            this.btn_Ajouter.Location = new System.Drawing.Point(366, 302);
+            this.btn_Ajouter.Location = new System.Drawing.Point(82, 233);
             this.btn_Ajouter.Name = "btn_Ajouter";
             this.btn_Ajouter.Size = new System.Drawing.Size(75, 23);
             this.btn_Ajouter.TabIndex = 0;
@@ -52,31 +53,32 @@
             // 
             // chp_NomV
             // 
-            this.chp_NomV.Location = new System.Drawing.Point(353, 100);
+            this.chp_NomV.Location = new System.Drawing.Point(66, 58);
             this.chp_NomV.Name = "chp_NomV";
             this.chp_NomV.Size = new System.Drawing.Size(100, 22);
             this.chp_NomV.TabIndex = 1;
             this.chp_NomV.TextChanged += new System.EventHandler(this.chp_NomV_TextChanged);
             // 
-            // dataGridView1
+            // dtgv_Voilier
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 370);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(801, 234);
-            this.dataGridView1.TabIndex = 2;
+            this.dtgv_Voilier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Voilier.Location = new System.Drawing.Point(12, 370);
+            this.dtgv_Voilier.Name = "dtgv_Voilier";
+            this.dtgv_Voilier.RowTemplate.Height = 24;
+            this.dtgv_Voilier.Size = new System.Drawing.Size(801, 234);
+            this.dtgv_Voilier.TabIndex = 2;
+            this.dtgv_Voilier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Voilier_CellContentClick);
             // 
             // chp_ImmatV
             // 
-            this.chp_ImmatV.Location = new System.Drawing.Point(353, 247);
+            this.chp_ImmatV.Location = new System.Drawing.Point(67, 184);
             this.chp_ImmatV.Name = "chp_ImmatV";
             this.chp_ImmatV.Size = new System.Drawing.Size(100, 22);
             this.chp_ImmatV.TabIndex = 3;
             // 
             // chp_MarqueV
             // 
-            this.chp_MarqueV.Location = new System.Drawing.Point(353, 175);
+            this.chp_MarqueV.Location = new System.Drawing.Point(67, 116);
             this.chp_MarqueV.Name = "chp_MarqueV";
             this.chp_MarqueV.Size = new System.Drawing.Size(100, 22);
             this.chp_MarqueV.TabIndex = 4;
@@ -84,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 80);
+            this.label1.Location = new System.Drawing.Point(63, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 5;
@@ -94,7 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(350, 155);
+            this.label2.Location = new System.Drawing.Point(64, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 17);
             this.label2.TabIndex = 6;
@@ -104,37 +106,48 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(335, 227);
+            this.label3.Location = new System.Drawing.Point(42, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(165, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Immatriculation du Voilier";
             // 
-            // textBox1
+            // chp_Rechercher
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 247);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 22);
-            this.textBox1.TabIndex = 8;
+            this.chp_Rechercher.Location = new System.Drawing.Point(12, 342);
+            this.chp_Rechercher.Name = "chp_Rechercher";
+            this.chp_Rechercher.Size = new System.Drawing.Size(218, 22);
+            this.chp_Rechercher.TabIndex = 8;
+            // 
+            // btn_Rechercher
+            // 
+            this.btn_Rechercher.Location = new System.Drawing.Point(236, 341);
+            this.btn_Rechercher.Name = "btn_Rechercher";
+            this.btn_Rechercher.Size = new System.Drawing.Size(94, 23);
+            this.btn_Rechercher.TabIndex = 9;
+            this.btn_Rechercher.Text = "Rechercher";
+            this.btn_Rechercher.UseVisualStyleBackColor = true;
+            this.btn_Rechercher.Click += new System.EventHandler(this.btn_Rechercher_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 616);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_Rechercher);
+            this.Controls.Add(this.chp_Rechercher);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chp_MarqueV);
             this.Controls.Add(this.chp_ImmatV);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgv_Voilier);
             this.Controls.Add(this.chp_NomV);
             this.Controls.Add(this.btn_Ajouter);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_Voilier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,13 +157,14 @@
 
         private System.Windows.Forms.Button btn_Ajouter;
         private System.Windows.Forms.TextBox chp_NomV;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgv_Voilier;
         private System.Windows.Forms.TextBox chp_ImmatV;
         private System.Windows.Forms.TextBox chp_MarqueV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox chp_Rechercher;
+        private System.Windows.Forms.Button btn_Rechercher;
     }
 }
 

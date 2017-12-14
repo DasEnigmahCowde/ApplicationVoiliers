@@ -56,13 +56,42 @@ namespace Application_Voiliers
             }
             finally
             {
-                sqlCon.Close(); 
+                sqlCon.Close();
             }
+        }
+
+        void FillMyZbub()
+        {
+            if (sqlCon.State == ConnectionState.Closed)
+                sqlCon.Open();
+
+            SqlDataAdapter sqlDa = new SqlDataAdapter("search", sqlCon);
+            sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+            sqlDa.SelectCommand.Parameters.AddWithValue("@NomVoilier", chp_Rechercher.Text.Trim());
+            DataTable dataTable = new DataTable();
+            sqlDa.Fill(dataTable);
+            dtgv_Voilier.DataSource = dataTable; 
+            sqlCon.Close();
         }
 
         private void chp_NomV_TextChanged(object sender, EventArgs e)
         {
+        }
 
+        private void dtgv_Voilier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void btn_Rechercher_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FillMyZbub();    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message d'erreur");
+            }
         }
     }
 }
