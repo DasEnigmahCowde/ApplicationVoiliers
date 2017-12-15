@@ -1,6 +1,6 @@
 ﻿namespace Application_Voiliers
 {
-    partial class Form1
+    partial class SG_Voilier
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -38,12 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.chp_Rechercher = new System.Windows.Forms.TextBox();
             this.btn_Rechercher = new System.Windows.Forms.Button();
+            this.btn_Modifier = new System.Windows.Forms.Button();
+            this.btn_Supprimer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Voilier)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Ajouter
             // 
-            this.btn_Ajouter.Location = new System.Drawing.Point(82, 233);
+            this.btn_Ajouter.Location = new System.Drawing.Point(12, 239);
             this.btn_Ajouter.Name = "btn_Ajouter";
             this.btn_Ajouter.Size = new System.Drawing.Size(75, 23);
             this.btn_Ajouter.TabIndex = 0;
@@ -68,6 +70,7 @@
             this.dtgv_Voilier.Size = new System.Drawing.Size(801, 234);
             this.dtgv_Voilier.TabIndex = 2;
             this.dtgv_Voilier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Voilier_CellContentClick);
+            this.dtgv_Voilier.DoubleClick += new System.EventHandler(this.dtgv_Voilier_DoubleClick);
             // 
             // chp_ImmatV
             // 
@@ -129,11 +132,33 @@
             this.btn_Rechercher.UseVisualStyleBackColor = true;
             this.btn_Rechercher.Click += new System.EventHandler(this.btn_Rechercher_Click);
             // 
-            // Form1
+            // btn_Modifier
+            // 
+            this.btn_Modifier.Location = new System.Drawing.Point(93, 239);
+            this.btn_Modifier.Name = "btn_Modifier";
+            this.btn_Modifier.Size = new System.Drawing.Size(75, 23);
+            this.btn_Modifier.TabIndex = 10;
+            this.btn_Modifier.Text = "Modifier";
+            this.btn_Modifier.UseVisualStyleBackColor = true;
+            this.btn_Modifier.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Supprimer
+            // 
+            this.btn_Supprimer.Location = new System.Drawing.Point(174, 239);
+            this.btn_Supprimer.Name = "btn_Supprimer";
+            this.btn_Supprimer.Size = new System.Drawing.Size(82, 23);
+            this.btn_Supprimer.TabIndex = 11;
+            this.btn_Supprimer.Text = "Supprimer";
+            this.btn_Supprimer.UseVisualStyleBackColor = true;
+            this.btn_Supprimer.Click += new System.EventHandler(this.btn_Supprimer_Click);
+            // 
+            // SG_Voilier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 616);
+            this.Controls.Add(this.btn_Supprimer);
+            this.Controls.Add(this.btn_Modifier);
             this.Controls.Add(this.btn_Rechercher);
             this.Controls.Add(this.chp_Rechercher);
             this.Controls.Add(this.label3);
@@ -144,8 +169,8 @@
             this.Controls.Add(this.dtgv_Voilier);
             this.Controls.Add(this.chp_NomV);
             this.Controls.Add(this.btn_Ajouter);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "SG_Voilier";
+            this.Text = "SG_Voilier";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Voilier)).EndInit();
             this.ResumeLayout(false);
@@ -165,6 +190,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox chp_Rechercher;
         private System.Windows.Forms.Button btn_Rechercher;
+        private System.Windows.Forms.Button btn_Modifier;
+        private System.Windows.Forms.Button btn_Supprimer;
     }
 }
 
